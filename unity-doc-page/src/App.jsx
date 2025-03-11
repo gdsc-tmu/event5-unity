@@ -106,7 +106,7 @@ function App() {
 	const displayDocuments = filterChips(documents, chips);
 
 	return (
-		<>
+		<div className='w-full overflow-hidden relative'>
 			{circles.map((circle, index) => {
 				return (
 					<div
@@ -137,18 +137,31 @@ function App() {
 							</Stack>
 						)}
 						<Grid2 container spacing={2}>
-							{displayDocuments.map((doc, index) => {
-								return (
-									<Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={index}>
-										<DocumentCard doc={doc} isLoaded={loaded} />
-									</Grid2>
-								);
-							})}
+							{displayDocuments.length > 0 ? (
+								displayDocuments.map((doc, index) => {
+									return (
+										<Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+											<DocumentCard doc={doc} isLoaded={loaded} />
+										</Grid2>
+									);
+								})
+							) : (
+								<Stack
+									sx={{
+										width: "100%",
+										height: 300,
+										alignItems: "center",
+										pt: 10,
+									}}
+								>
+									<Typography variant='h6'>見つかりませんでした</Typography>
+								</Stack>
+							)}
 						</Grid2>
 					</Stack>
 				</Container>
 			</div>
-		</>
+		</div>
 	);
 }
 
