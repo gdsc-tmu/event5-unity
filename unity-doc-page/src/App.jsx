@@ -1,35 +1,40 @@
 import React from "react";
-import "./App.css";
 import {
+	Box,
 	Button,
-	Card,
-	CardActions,
-	CardContent,
-	CardMedia,
 	CircularProgress,
 	Container,
 	Grid2,
+	Paper,
 	Stack,
 	Typography,
 } from "@mui/material";
+import { DocumentCard } from "./Components/DocumentCard";
 
 async function fetchAllDocuments(url) {
 	const response = await fetch(url);
 	const data = await response.json();
-
 	return data;
+}
+
+export function jumpTo(path) {
+	window.location.href = `${path}`;
 }
 
 function App() {
 	const url =
 		"https://script.google.com/macros/s/AKfycbyQPUXmckxPOROCSwAZzLHq8xcD8ZHfZQq2UUF6IL3mej1ihBPq3v4Q_Pby6XSPy_5nyQ/exec";
-	const [documents, setDocuments] = React.useState();
+	const [documents, setDocuments] = React.useState([1, 2, 3]);
+	const [loaded, setLoaded] = React.useState(false);
 
 	React.useEffect(() => {
+		console.log("Welcome to GDGoC TMU. Now loading...");
 		const fetchData = async () => {
 			const data = await fetchAllDocuments(url);
 
+			setLoaded(true);
 			setDocuments(data);
+			console.log("Fetching successfully completed.");
 		};
 
 		fetchData();
@@ -37,54 +42,78 @@ function App() {
 
 	return (
 		<Container sx={{ py: 3 }}>
-			<Typography variant='h4'>Unity勉強会サポートページ</Typography>
+			<Box sx={{ my: 3 }}>
+				<Typography variant='h5' sx={{ mb: 1 }}>
+					「Unity勉強会 – クロームくんを動かそう！ –」サポートページ
+				</Typography>
+				<Typography variant='body2' color='textSecondary'>
+					Powered by GDGoC TMU
+				</Typography>
+			</Box>
+
+			<HeadCard />
+
 			<Stack gap={1} pt={5}>
-				{documents ? (
-					<Grid2 container spacing={2}>
-						{documents.map((doc, index) => {
-							return (
-								<Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={index}>
-									<Card sx={{ width: "100%" }} elevation={3}>
-										<CardMedia
-											sx={{ height: 140 }}
-											image='/static/images/cards/contemplative-reptile.jpg'
-											title='thumbnail'
-										/>
-										<CardContent>
-											<Typography gutterBottom variant='h5' component='div'>
-												{doc.title}
-											</Typography>
-											<Typography
-												variant='body2'
-												sx={{ color: "text.secondary" }}
-											>
-												{doc.summary}
-											</Typography>
-										</CardContent>
-										<CardActions>
-											<Button
-												variant='text'
-												onClick={() => {
-													console.log(doc.link);
-													window.location.href = `${doc.link}`;
-												}}
-											>
-												もっと見る
-											</Button>
-										</CardActions>
-									</Card>
-								</Grid2>
-							);
-						})}
-					</Grid2>
-				) : (
-					<Stack alignItems={"center"}>
+				{!loaded && (
+					<Stack sx={{ alignItems: "center", mb: 3 }}>
 						<CircularProgress />
 					</Stack>
 				)}
+				<Grid2 container spacing={2}>
+					{documents.map((doc, index) => {
+						return (
+							<Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+								<DocumentCard doc={doc} isLoaded={loaded} />
+							</Grid2>
+						);
+					})}
+				</Grid2>
 			</Stack>
 		</Container>
 	);
 }
+
+const HeadCard = React.memo(() => {
+	return (
+		<Paper sx={{ p: 4 }} elevation={3}>
+			<Stack direction={{ xs: "column-reverse", sm: "row" }}>
+				<Box sx={{ flexGrow: 5, p: 4 }}>
+					<Typography variant='h5' sx={{ mb: 2 }}>
+						サポートページにようこそ！
+					</Typography>
+					<Typography>
+						このページでは、Unityの基本的な使い方や作品をブラッシュアップするために役立つTipsを随時追加していきます。
+						<br />
+						Unityの機能を活用するための情報をまとめていますので、開発の際にぜひ参考にしてください🙌
+					</Typography>
+					<Box sx={{ display: "flex", gap: 2, mt: 3 }}>
+						<Button
+							onClick={() =>
+								jumpTo("https://gdsc-tmu.connpass.com/event/347169/")
+							}
+							variant='outlined'
+						>
+							イベントページへ
+						</Button>
+						<Button
+							onClick={() =>
+								jumpTo(
+									"https://oasis-smartphone-fcf.notion.site/Unity-1b2a6c094a5d80b58031e6eff81bfa77"
+								)
+							}
+							variant='contained'
+						>
+							チュートリアルはこちら！
+						</Button>
+					</Box>
+				</Box>
+				<img
+					src='chromekun.png'
+					className='sm:w-[35%] w-full object-cover rounded-lg max-h-[300px]'
+				></img>
+			</Stack>
+		</Paper>
+	);
+});
 
 export default App;
