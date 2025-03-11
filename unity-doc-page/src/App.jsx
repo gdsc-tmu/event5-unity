@@ -12,37 +12,37 @@ import {
 import { DocumentCard } from "./Components/DocumentCard";
 
 async function fetchAllDocuments(url) {
-	// const response = await fetch(url);
+	const response = await fetch(url);
 
-	// const data = await response.json();
-	const data = [
-		{
-			title: "【テスト２】テスト",
-			summary: "サマリーテスト２",
-			link: "https://yzuemx.com",
-			thumbnail:
-				"https://drive.google.com/file/d/1mzQIw_fqPiluSPvsgKY64lzNn8vs9ED3/preview",
-		},
-		{
-			title: "【テスト】テストドキュメント",
-			summary: "テストのサマリー",
-			link: "https://x.com/GdscTmu",
-			thumbnail:
-				"https://drive.google.com/file/d/1DaNt_a52oFMsFbp8mB8pvYyM_J1DyOBv/preview",
-		},
-		{
-			title: "音を追加してみよう",
-			summary: "",
-			link: "https://oasis-smartphone-fcf.notion.site/1b3a6c094a5d80828d96f8bec377d05f?pvs=4",
-			thumbnail: "",
-		},
-		{
-			title: "ああ",
-			summary: "いい",
-			link: "https://yzuemx.com",
-			thumbnail: "",
-		},
-	];
+	const data = await response.json();
+	// const data = [
+	// 	{
+	// 		title: "【テスト２】テスト",
+	// 		summary: "サマリーテスト２",
+	// 		link: "https://yzuemx.com",
+	// 		thumbnail:
+	// 			"https://drive.google.com/file/d/1mzQIw_fqPiluSPvsgKY64lzNn8vs9ED3/preview",
+	// 	},
+	// 	{
+	// 		title: "【テスト】テストドキュメント",
+	// 		summary: "テストのサマリー",
+	// 		link: "https://x.com/GdscTmu",
+	// 		thumbnail:
+	// 			"https://drive.google.com/file/d/1DaNt_a52oFMsFbp8mB8pvYyM_J1DyOBv/preview",
+	// 	},
+	// 	{
+	// 		title: "音を追加してみよう",
+	// 		summary: "",
+	// 		link: "https://oasis-smartphone-fcf.notion.site/1b3a6c094a5d80828d96f8bec377d05f?pvs=4",
+	// 		thumbnail: "",
+	// 	},
+	// 	{
+	// 		title: "ああ",
+	// 		summary: "いい",
+	// 		link: "https://yzuemx.com",
+	// 		thumbnail: "",
+	// 	},
+	// ];
 	return data;
 }
 
@@ -52,7 +52,7 @@ export function jumpTo(path) {
 
 function App() {
 	const url =
-		"https://script.google.com/macros/s/AKfycbydn4jJHvtokJksVfexIYizS_CV5Nf8UIH8GepDGhGP8HMVZLOuwbpT7YrotrZ7ZvqEHA/exec";
+		"https://script.google.com/macros/s/AKfycbxVj1v7c3WguiAIqXadXQ0qKGmNJ_dPRMqTjsYim-GVrr5IRapF-9WQjfVoY8kX0jBdkQ/exec";
 	const [documents, setDocuments] = React.useState([1, 2, 3]);
 	const [loaded, setLoaded] = React.useState(false);
 
