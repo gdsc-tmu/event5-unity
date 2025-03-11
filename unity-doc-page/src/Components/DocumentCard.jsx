@@ -10,13 +10,14 @@ import {
 import { jumpTo } from "../App";
 
 export const DocumentCard = ({ doc, isLoaded }) => {
+	console.log(doc.thumbnail);
 	return (
 		<Card sx={{ width: "100%" }} elevation={3}>
-			<CardMedia
-				sx={{ height: 140 }}
-				image='/static/images/cards/contemplative-reptile.jpg'
-				title='thumbnail'
-			/>
+			{isLoaded ? (
+				<iframe src={doc.thumbnail} className='w-full h-[250px]'></iframe>
+			) : (
+				<Skeleton variant='rectangular' sx={{ height: 200 }} />
+			)}
 			<CardContent>
 				{isLoaded ? (
 					<>

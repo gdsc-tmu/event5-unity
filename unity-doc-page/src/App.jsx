@@ -23,7 +23,7 @@ export function jumpTo(path) {
 
 function App() {
 	const url =
-		"https://script.google.com/macros/s/AKfycbyQPUXmckxPOROCSwAZzLHq8xcD8ZHfZQq2UUF6IL3mej1ihBPq3v4Q_Pby6XSPy_5nyQ/exec";
+		"https://script.google.com/macros/s/AKfycbydn4jJHvtokJksVfexIYizS_CV5Nf8UIH8GepDGhGP8HMVZLOuwbpT7YrotrZ7ZvqEHA/exec";
 	const [documents, setDocuments] = React.useState([1, 2, 3]);
 	const [loaded, setLoaded] = React.useState(false);
 
@@ -77,7 +77,7 @@ const HeadCard = React.memo(() => {
 	return (
 		<Paper sx={{ p: 4 }} elevation={3}>
 			<Stack direction={{ xs: "column-reverse", sm: "row" }}>
-				<Box sx={{ flexGrow: 5, p: 4 }}>
+				<Box sx={{ flexGrow: 5, p: 4, pr: 5 }}>
 					<Typography variant='h5' sx={{ mb: 2 }}>
 						サポートページにようこそ！
 					</Typography>
