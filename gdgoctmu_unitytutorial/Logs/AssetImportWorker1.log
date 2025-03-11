@@ -1,0 +1,166 @@
+Unity Editor version:    2022.3.25f1 (530ae0ba3889)
+Branch:                  2022.3/staging
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 15.2 (Build 24C101)
+Darwin version:          24.2.0
+Architecture:            arm64
+Running under Rosetta:   NO
+Available memory:        24576 MB
+Using pre-set license
+Pro License: YES
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/2022.3.25f1/Unity.app/Contents/MacOS/Unity
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+/Users/sh/Documents/GitHub/event5-unity/gdgoctmu_unitytutorial
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+62231
+Successfully changed project path to: /Users/sh/Documents/GitHub/event5-unity/gdgoctmu_unitytutorial
+/Users/sh/Documents/GitHub/event5-unity/gdgoctmu_unitytutorial
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [8448311872] Host "[IP] 133.86.161.172 [Port] 0 [Flags] 2 [Guid] 1950092809 [EditorId] 1950092809 [Version] 1048832 [Id] OSXEditor(0,sh-mbp.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [8448311872] Host "[IP] 133.86.161.172 [Port] 0 [Flags] 2 [Guid] 1950092809 [EditorId] 1950092809 [Version] 1048832 [Id] OSXEditor(0,sh-mbp.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 11 workers.
+Refreshing native plugins compatible for Editor in 1.67 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.25f1 (530ae0ba3889)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2022.3.25f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/sh/Documents/GitHub/event5-unity/gdgoctmu_unitytutorial/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+ preferred device: Apple M4 Pro (high power)
+Metal devices available: 1
+0: Apple M4 Pro (high power)
+Using device Apple M4 Pro (high power)
+Initializing Metal device caps: Apple M4 Pro
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/2022.3.25f1/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/2022.3.25f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
+Mono config path = '/Applications/Unity/Hub/Editor/2022.3.25f1/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56164
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/2022.3.25f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/2022.3.25f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Registered in 0.000750 seconds.
+- Loaded All Assemblies, in  0.157 seconds
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.118 seconds
+Domain Reload Profiling: 275ms
+	BeginReloadAssembly (38ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (0ms)
+	RebuildCommonClasses (17ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (23ms)
+	LoadAllAssembliesAndSetupDomain (73ms)
+		LoadAssemblies (38ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (72ms)
+			TypeCache.Refresh (71ms)
+				TypeCache.ScanAssembly (63ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (118ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (90ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (1ms)
+			ProcessInitializeOnLoadAttributes (64ms)
+			ProcessInitializeOnLoadMethodAttributes (19ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+Assertion failed on expression: 'IsFileCreated(assemblyPath)'
+Assertion failed on expression: 'IsFileCreated(assemblyPath)'
+Assertion failed on expression: 'IsFileCreated(assemblyPath)'
+Assertion failed on expression: 'IsFileCreated(assemblyPath)'
+Assertion failed on expression: 'IsFileCreated(assemblyPath)'
+Assertion failed on expression: 'IsFileCreated(assemblyPath)'
+Compilation Pipeline: Could not read file Packages/com.unity.collab-proxy/Editor/PlasticSCM/Toolbar/Unity.CollabProxy.Editor.asmdef
+Fatal Error! Compilation Pipeline: Could not read file Packages/com.unity.collab-proxy/Editor/PlasticSCM/Toolbar/Unity.CollabProxy.Editor.asmdef
+Obtained 35 stack frames.
+#0  0x0000018dfd7720 in __pthread_kill
+#1  0xc7680018df1c908 in abort
+#2  0x933600010772bf04 in __cxx_global_var_init.3
+#3  0x000001063081d4 in EditorMonoConsole::LogToConsoleImplementation(CppLogEntry&)
+#4  0x00000106307e24 in EditorMonoConsole::LogToConsoleImplementation(DebugStringToFileData const&)
+#5  0x00000106309668 in LogToConsoleImplementation(DebugStringToFileData const&)
+#6  0x00000107076aac in DebugStringToFilePostprocessedStacktrace(DebugStringToFileData const&)
+#7  0x00000107077380 in DebugStringToFile(DebugStringToFileData const&)
+#8  0x00000106816870 in RegisterAssemblyDefinition(core::basic_string<char, core::StringStorageDefault<char>> const&)
+#9  0x00000106c07314 in UpdateScriptCompilationPipelineCaches(ScriptChanges const&, bool)
+#10 0x00000106c07b7c in WorkerInitializeAndProcessScriptChanges()
+#11 0x0000010649bb78 in Application::InitializeProject()
+#12 0x00000107737e7c in -[EditorApplication applicationDidFinishLaunching:]
+#13 0x0000018e0ed360 in __CFNOTIFICATIONCENTER_IS_CALLING_OUT_TO_AN_OBSERVER__
+#14 0xea4c00018e17e20c in ___CFXRegistrationPost_block_invoke
+#15 0xc43280018e17e154 in _CFXRegistrationPost
+#16 0x4b0980018e0bbf9c in _CFXNotificationPost
+#17 0xef4680018f275fd4 in -[NSNotificationCenter postNotificationName:object:userInfo:]
+#18 0x931c800191c69c78 in -[NSApplication _postDidFinishNotification]
+#19 0xde42000191c69a28 in -[NSApplication _sendFinishLaunchingNotification]
+#20 0xd173800191c67e88 in -[NSApplication(NSAppleEventHandling) _handleAEOpenEvent:]
+#21 0x3711000191c67a90 in -[NSApplication(NSAppleEventHandling) _handleCoreEvent:withReplyEvent:]
+#22 0x963000018f29ec8c in -[NSAppleEventManager dispatchRawAppleEvent:withRawReply:handlerRefCon:]
+#23 0xb5400018f29ea84 in _NSAppleEventManagerGenericHandler
+#24 0x67b800195681134 in _AppleEventsCheckInAppWithBlock
+#25 0x791d800195680a58 in _AppleEventsCheckInAppWithBlock
+#26 0xf373800195679fa4 in aeProcessAppleEvent
+#27 0x2f3c00019956c210 in AEProcessAppleEvent
+#28 0x6a56000191c6132c in _DPSNextEvent
+#29 0x9a370001925c52d4 in -[NSApplication(NSEventRouting) _nextEventMatchingEventMask:untilDate:inMode:dequeue:]
+#30 0x946f000191c54060 in -[NSApplication run]
+#31 0x8f06800191c2a854 in NSApplicationMain
+#32 0x3d2c800107751ae4 in EditorMain(int, char const**)
+#33 0x00000107751e30 in main
+#34 0x0000018dc90274 in start
