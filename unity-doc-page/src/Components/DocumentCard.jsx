@@ -3,22 +3,24 @@ import {
 	Card,
 	CardActions,
 	CardContent,
-	CardMedia,
 	Skeleton,
 	Typography,
 } from "@mui/material";
 import { jumpTo } from "../App";
 
 export const DocumentCard = ({ doc, isLoaded }) => {
-	console.log(doc.thumbnail);
+	if (doc.thumbnail === "") {
+		doc.thumbnail =
+			"https://drive.google.com/file/d/15KmEPtofPUHvhSv8beM72it2FE92xg7n/preview";
+	}
 	return (
-		<Card sx={{ width: "100%" }} elevation={3}>
+		<Card sx={{ width: "100%", "&:hover": { boxShadow: 7 } }} elevation={3}>
 			{isLoaded ? (
 				<iframe src={doc.thumbnail} className='w-full h-[250px]'></iframe>
 			) : (
 				<Skeleton variant='rectangular' sx={{ height: 200 }} />
 			)}
-			<CardContent>
+			<CardContent onClick={() => jumpTo(doc.link)}>
 				{isLoaded ? (
 					<>
 						<Typography
@@ -45,7 +47,7 @@ export const DocumentCard = ({ doc, isLoaded }) => {
 					</>
 				)}
 			</CardContent>
-			<CardActions>
+			<CardActions onClick={() => jumpTo(doc.link)}>
 				{isLoaded && (
 					<Button variant='text' onClick={() => jumpTo(doc.link)}>
 						もっと見る

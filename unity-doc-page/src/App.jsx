@@ -12,8 +12,37 @@ import {
 import { DocumentCard } from "./Components/DocumentCard";
 
 async function fetchAllDocuments(url) {
-	const response = await fetch(url);
-	const data = await response.json();
+	// const response = await fetch(url);
+
+	// const data = await response.json();
+	const data = [
+		{
+			title: "【テスト２】テスト",
+			summary: "サマリーテスト２",
+			link: "https://yzuemx.com",
+			thumbnail:
+				"https://drive.google.com/file/d/1mzQIw_fqPiluSPvsgKY64lzNn8vs9ED3/preview",
+		},
+		{
+			title: "【テスト】テストドキュメント",
+			summary: "テストのサマリー",
+			link: "https://x.com/GdscTmu",
+			thumbnail:
+				"https://drive.google.com/file/d/1DaNt_a52oFMsFbp8mB8pvYyM_J1DyOBv/preview",
+		},
+		{
+			title: "音を追加してみよう",
+			summary: "",
+			link: "https://oasis-smartphone-fcf.notion.site/1b3a6c094a5d80828d96f8bec377d05f?pvs=4",
+			thumbnail: "",
+		},
+		{
+			title: "ああ",
+			summary: "いい",
+			link: "https://yzuemx.com",
+			thumbnail: "",
+		},
+	];
 	return data;
 }
 
@@ -40,36 +69,66 @@ function App() {
 		fetchData();
 	}, []);
 
+	const circles = [
+		{ color: "red", top: "5", left: "10" },
+		{ color: "yellow", top: "30", left: "80" },
+		{ color: "green", top: "85", left: "10" },
+		{ color: "blue", top: "80", left: "70" },
+		{ color: "red", top: "65", left: "90" },
+		{ color: "yellow", top: "55", left: "5" },
+		{ color: "green", top: "7", left: "90" },
+		{ color: "blue", top: "35", left: "30" },
+	];
+
+	const colorClasses = {
+		red: "bg-red-600",
+		green: "bg-green-500",
+		blue: "bg-blue-500",
+		yellow: "bg-yellow-500",
+	};
+
 	return (
-		<Container sx={{ py: 3 }}>
-			<Box sx={{ my: 3 }}>
-				<Typography variant='h5' sx={{ mb: 1 }}>
-					「Unity勉強会 – クロームくんを動かそう！ –」サポートページ
-				</Typography>
-				<Typography variant='body2' color='textSecondary'>
-					Powered by GDGoC TMU
-				</Typography>
-			</Box>
+		<>
+			{circles.map((circle) => {
+				return (
+					<div
+						className={"circle " + colorClasses[circle.color]}
+						style={{ top: `${circle.top}%`, left: `${circle.left}%` }}
+					></div>
+				);
+			})}
+			<div className='glass w-full'>
+				<Container sx={{ py: 3 }}>
+					<Box sx={{ my: 3 }}>
+						<Typography variant='h5' sx={{ mb: 1, fontWeight: 600 }}>
+							「Unity勉強会 – クロームくんを動かそう！ –」サポートページ
+						</Typography>
+						<Typography variant='body2' color='textSecondary'>
+							Powered by GDGoC TMU
+						</Typography>
+					</Box>
 
-			<HeadCard />
+					<HeadCard />
 
-			<Stack gap={1} pt={5}>
-				{!loaded && (
-					<Stack sx={{ alignItems: "center", mb: 3 }}>
-						<CircularProgress />
+					<Stack gap={1} pt={5}>
+						{!loaded && (
+							<Stack sx={{ alignItems: "center", mb: 3 }}>
+								<CircularProgress />
+							</Stack>
+						)}
+						<Grid2 container spacing={2}>
+							{documents.map((doc, index) => {
+								return (
+									<Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+										<DocumentCard doc={doc} isLoaded={loaded} />
+									</Grid2>
+								);
+							})}
+						</Grid2>
 					</Stack>
-				)}
-				<Grid2 container spacing={2}>
-					{documents.map((doc, index) => {
-						return (
-							<Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={index}>
-								<DocumentCard doc={doc} isLoaded={loaded} />
-							</Grid2>
-						);
-					})}
-				</Grid2>
-			</Stack>
-		</Container>
+				</Container>
+			</div>
+		</>
 	);
 }
 
@@ -78,7 +137,7 @@ const HeadCard = React.memo(() => {
 		<Paper sx={{ p: 4 }} elevation={3}>
 			<Stack direction={{ xs: "column-reverse", sm: "row" }}>
 				<Box sx={{ flexGrow: 5, p: 4, pr: 5 }}>
-					<Typography variant='h5' sx={{ mb: 2 }}>
+					<Typography variant='h5' sx={{ mb: 2, fontWeight: 600 }}>
 						サポートページにようこそ！
 					</Typography>
 					<Typography>
