@@ -2,13 +2,18 @@ import React from "react";
 import {
 	Box,
 	Button,
+	Chip,
 	CircularProgress,
 	Container,
 	Grid2,
+	IconButton,
+	InputBase,
 	Paper,
 	Stack,
+	TextField,
 	Typography,
 } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
 import { DocumentCard } from "./Components/DocumentCard";
 
 async function fetchAllDocuments(url) {
@@ -55,6 +60,7 @@ function App() {
 		"https://script.google.com/macros/s/AKfycbxVj1v7c3WguiAIqXadXQ0qKGmNJ_dPRMqTjsYim-GVrr5IRapF-9WQjfVoY8kX0jBdkQ/exec";
 	const [documents, setDocuments] = React.useState([1, 2, 3]);
 	const [loaded, setLoaded] = React.useState(false);
+	const [chips, setChips] = React.useState([]);
 
 	React.useEffect(() => {
 		console.log("Welcome to GDGoC TMU. Now loading...");
@@ -87,11 +93,24 @@ function App() {
 		yellow: "bg-yellow-500",
 	};
 
+	const filterChips = (data, chips) => {
+		return chips.length > 0
+			? data.filter((item) =>
+					chips.some(
+						(chip) => item.title.includes(chip) || item.summary.includes(chip)
+					)
+			  )
+			: data;
+	};
+
+	const displayDocuments = filterChips(documents, chips);
+
 	return (
 		<>
-			{circles.map((circle) => {
+			{circles.map((circle, index) => {
 				return (
 					<div
+						key={index}
 						className={"circle " + colorClasses[circle.color]}
 						style={{ top: `${circle.top}%`, left: `${circle.left}%` }}
 					></div>
@@ -109,15 +128,16 @@ function App() {
 					</Box>
 
 					<HeadCard />
+					<ChipInput chips={chips} setChips={setChips} />
 
-					<Stack gap={1} pt={5}>
+					<Stack gap={1} pt={3}>
 						{!loaded && (
 							<Stack sx={{ alignItems: "center", mb: 3 }}>
 								<CircularProgress />
 							</Stack>
 						)}
 						<Grid2 container spacing={2}>
-							{documents.map((doc, index) => {
+							{displayDocuments.map((doc, index) => {
 								return (
 									<Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={index}>
 										<DocumentCard doc={doc} isLoaded={loaded} />
@@ -174,5 +194,39 @@ const HeadCard = React.memo(() => {
 		</Paper>
 	);
 });
+
+const ChipInput = ({ chips, setChips }) => {
+	const [inputValue, setInputValue] = React.useState("");
+
+	const handleKeyDown = (event) => {
+		if (event.key === "Enter" && inputValue.trim() !== "") {
+			setChips([...chips, inputValue.trim()]);
+			setInputValue("");
+			event.preventDefault(); // Enterのデフォルト動作を防ぐ
+		}
+	};
+
+	const handleDelete = (chipToDelete) => {
+		setChips(chips.filter((chip) => chip !== chipToDelete));
+	};
+
+	return (
+		<Paper sx={{ p: 2, mt: 3 }} elevation={3}>
+			<Stack spacing={1} direction='row' flexWrap='wrap'>
+				{chips.map((chip, index) => (
+					<Chip key={index} label={chip} onDelete={() => handleDelete(chip)} />
+				))}
+			</Stack>
+			<InputBase
+				sx={{ mt: 1 }}
+				fullWidth
+				placeholder='Tipsを検索'
+				value={inputValue}
+				onChange={(e) => setInputValue(e.target.value)}
+				onKeyDown={handleKeyDown}
+			/>
+		</Paper>
+	);
+};
 
 export default App;

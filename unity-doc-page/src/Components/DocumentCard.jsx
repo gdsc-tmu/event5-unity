@@ -14,13 +14,21 @@ export const DocumentCard = ({ doc, isLoaded }) => {
 			"https://drive.google.com/file/d/15KmEPtofPUHvhSv8beM72it2FE92xg7n/preview";
 	}
 	return (
-		<Card sx={{ width: "100%", "&:hover": { boxShadow: 7 } }} elevation={3}>
+		<Card
+			sx={{ width: "100%", "&:hover": { boxShadow: 7 }, cursor: "pointer" }}
+			elevation={3}
+			onClick={() => jumpTo(doc.link)}
+		>
 			{isLoaded ? (
-				<iframe src={doc.thumbnail} className='w-full h-[250px]'></iframe>
+				<iframe
+					src={doc.thumbnail}
+					className='w-full h-[250px]'
+					style={{ pointerEvents: "none" }}
+				></iframe>
 			) : (
 				<Skeleton variant='rectangular' sx={{ height: 200 }} />
 			)}
-			<CardContent onClick={() => jumpTo(doc.link)}>
+			<CardContent>
 				{isLoaded ? (
 					<>
 						<Typography
