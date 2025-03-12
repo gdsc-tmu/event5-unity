@@ -8,7 +8,8 @@
 		"build": "vite build",
 		"lint": "eslint .",
 		"preview": "vite preview",
-		"release": "rm -r ../docs/* && cp -r ./dist/* ../docs"
+		"release": "rm -r ../docs/* && cp -r ./dist/* ../docs",
+		"zenbu": "npm run build && npm run release && code ../docs/index.html"
 	},
 	"dependencies": {
 		"@emotion/react": "^11.14.0",
@@ -18,6 +19,7 @@
 		"@tailwindcss/vite": "^4.0.12",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0",
+		"react-router-dom": "^7.3.0",
 		"tailwindcss": "^4.0.12"
 	},
 	"devDependencies": {

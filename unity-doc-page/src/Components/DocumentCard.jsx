@@ -6,12 +6,12 @@ import {
 	Skeleton,
 	Typography,
 } from "@mui/material";
-import { jumpTo } from "../App";
+import { jumpTo } from "../TopPage";
 
 export const DocumentCard = ({ doc, isLoaded }) => {
 	if (doc.thumbnail === "") {
 		doc.thumbnail =
-			"https://drive.google.com/file/d/15KmEPtofPUHvhSv8beM72it2FE92xg7n/preview";
+			"https://drive.google.com/file/d/10QvHYUCughbPHZdtcUk1Cqee6v_GOIaC/preview";
 	}
 	return (
 		<Card
