@@ -56,7 +56,7 @@ const page = () => {
 								card={question}
 								key={index}
 								onClick={() =>
-									nav("/event5-unity/questions/" + question.id, {
+									nav("/questions/" + question.id, {
 										state: question,
 									})
 								}

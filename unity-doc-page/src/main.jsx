@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")).render(
 	<StrictMode>
-		<BrowserRouter>
+		<BrowserRouter basename='/event5-unity'>
 			<App />
 		</BrowserRouter>
 	</StrictMode>

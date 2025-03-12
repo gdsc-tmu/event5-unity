@@ -41,7 +41,7 @@ export const HeadCard = React.memo(() => {
 						<Button
 							variant='outlined'
 							sx={{ mt: 1 }}
-							onClick={() => nav("/event5-unity/questions")}
+							onClick={() => nav("/questions")}
 						>
 							質問もできます！（ベータ版）
 						</Button>

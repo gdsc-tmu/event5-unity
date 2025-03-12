@@ -16,7 +16,7 @@ export const HeadCard = React.memo(() => {
 						このページでは、Unityに関する疑問を共有することができます。もしわからないことがあったら、お気軽にご相談を！
 					</Typography>
 					<Box sx={{ display: "flex", gap: 2, mt: 3 }}>
-						<Button onClick={() => nav("/event5-unity")} variant='outlined'>
+						<Button onClick={() => nav("/")} variant='outlined'>
 							トップへ戻る
 						</Button>
 						<Button
