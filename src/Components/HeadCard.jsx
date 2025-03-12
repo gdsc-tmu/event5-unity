@@ -23,6 +23,7 @@ export const HeadCard = React.memo(() => {
 								jumpTo("https://gdsc-tmu.connpass.com/event/347169/")
 							}
 							variant='outlined'
+							sx={{ mr: 1 }}
 						>
 							イベントページへ
 						</Button>
@@ -32,7 +33,6 @@ export const HeadCard = React.memo(() => {
 									"https://oasis-smartphone-fcf.notion.site/Unity-1b2a6c094a5d80b58031e6eff81bfa77"
 								)
 							}
-							sx={{ ml: 1 }}
 							variant='contained'
 						>
 							チュートリアルはこちら！
