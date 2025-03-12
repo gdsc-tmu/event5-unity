@@ -8,7 +8,7 @@ import {
 import React from "react";
 import { HeadCard } from "./Components/HeadCard";
 import QuestionCard from "./Components/QuestionCard";
-import { useFetch } from "../../Hooks/useFetch";
+import { useFetch } from "../../../Hooks/useFetch";
 import { useNavigate } from "react-router-dom";
 
 const page = () => {
@@ -56,7 +56,9 @@ const page = () => {
 								card={question}
 								key={index}
 								onClick={() =>
-									nav("/questions/" + question.id, { state: question })
+									nav("/event5-unity/questions/" + question.id, {
+										state: question,
+									})
 								}
 							/>
 						);
