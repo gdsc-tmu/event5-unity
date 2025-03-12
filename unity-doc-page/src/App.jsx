@@ -39,8 +39,6 @@ routes.push({
 });
 
 export default function App() {
-	const pathname = useLocation().pathname;
-	console.log(routes);
 	return <EntryPoint />;
 }
 
