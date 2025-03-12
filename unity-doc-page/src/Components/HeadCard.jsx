@@ -1,7 +1,10 @@
 import { Box, Button, Paper, Stack, Typography } from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { jumpTo } from "../TopPage";
 
 export const HeadCard = React.memo(() => {
+	const nav = useNavigate();
 	return (
 		<Paper sx={{ p: 4 }} elevation={3}>
 			<Stack direction={{ xs: "column-reverse", sm: "row" }}>
@@ -14,7 +17,7 @@ export const HeadCard = React.memo(() => {
 						<br />
 						Unityの機能を活用するための情報をまとめていますので、開発の際にぜひ参考にしてください🙌
 					</Typography>
-					<Box sx={{ display: "flex", gap: 2, mt: 3 }}>
+					<Box sx={{ mt: 3 }}>
 						<Button
 							onClick={() =>
 								jumpTo("https://gdsc-tmu.connpass.com/event/347169/")
@@ -29,9 +32,18 @@ export const HeadCard = React.memo(() => {
 									"https://oasis-smartphone-fcf.notion.site/Unity-1b2a6c094a5d80b58031e6eff81bfa77"
 								)
 							}
+							sx={{ ml: 1 }}
 							variant='contained'
 						>
 							チュートリアルはこちら！
+						</Button>
+						<br />
+						<Button
+							variant='outlined'
+							sx={{ mt: 1 }}
+							onClick={() => nav("/questions")}
+						>
+							質問もできます！（ベータ版）
 						</Button>
 					</Box>
 				</Box>

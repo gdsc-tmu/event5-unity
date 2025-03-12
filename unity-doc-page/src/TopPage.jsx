@@ -1,7 +1,6 @@
 import React from "react";
 import {
 	Box,
-	Button,
 	Chip,
 	CircularProgress,
 	Container,
@@ -14,41 +13,7 @@ import {
 import { DocumentCard } from "./Components/DocumentCard";
 import { circles, colorClasses } from "./Configs/CircleConfigs";
 import { HeadCard } from "./Components/HeadCard";
-
-async function fetchAllDocuments(url) {
-	const response = await fetch(url);
-
-	const data = await response.json();
-	// const data = [
-	// 	{
-	// 		title: "【テスト２】テスト",
-	// 		summary: "サマリーテスト２",
-	// 		link: "https://yzuemx.com",
-	// 		thumbnail:
-	// 			"https://drive.google.com/file/d/1mzQIw_fqPiluSPvsgKY64lzNn8vs9ED3/preview",
-	// 	},
-	// 	{
-	// 		title: "【テスト】テストドキュメント",
-	// 		summary: "テストのサマリー",
-	// 		link: "https://x.com/GdscTmu",
-	// 		thumbnail:
-	// 			"https://drive.google.com/file/d/1DaNt_a52oFMsFbp8mB8pvYyM_J1DyOBv/preview",
-	// 	},
-	// 	{
-	// 		title: "音を追加してみよう",
-	// 		summary: "",
-	// 		link: "https://oasis-smartphone-fcf.notion.site/1b3a6c094a5d80828d96f8bec377d05f?pvs=4",
-	// 		thumbnail: "",
-	// 	},
-	// 	{
-	// 		title: "ああ",
-	// 		summary: "いい",
-	// 		link: "https://yzuemx.com",
-	// 		thumbnail: "",
-	// 	},
-	// ];
-	return data;
-}
+import { useFetch } from "./Hooks/useFetch";
 
 export function jumpTo(path) {
 	window.location.href = `${path}`;
@@ -63,8 +28,9 @@ function TopPage() {
 
 	React.useEffect(() => {
 		console.log("Welcome to GDGoC TMU. Now loading...");
+
 		const fetchData = async () => {
-			const data = await fetchAllDocuments(url);
+			const data = await useFetch(url);
 
 			setLoaded(true);
 			setDocuments(data);

@@ -1,7 +1,7 @@
 import { CircularProgress, Stack } from "@mui/material";
 import { lazy, Suspense } from "react";
 import TopPage from "./TopPage";
-import { useLocation, useRoutes } from "react-router-dom";
+import { useRoutes } from "react-router-dom";
 
 const pages = import.meta.glob("./Pages/**/page.jsx");
 
