@@ -10,6 +10,7 @@ import { HeadCard } from "./Components/HeadCard";
 import QuestionCard from "./Components/QuestionCard";
 import { useFetch } from "../../Hooks/useFetch";
 import { useNavigate } from "react-router-dom";
+import { useGAS } from "../../Configs/GASConfigs";
 
 const page = () => {
 	const nav = useNavigate();
@@ -17,8 +18,7 @@ const page = () => {
 	const [questions, setQuestions] = React.useState(null);
 	const [loaded, setLoaded] = React.useState(false);
 
-	const url =
-		"https://script.google.com/macros/s/AKfycbxBg39ACw1gEV4bPESExSgaMdwdwUbzT68TARX0j6gGjBoZ89Xwg30WuYFEMy2vFwrDmA/exec";
+	const url = useGAS("getallquestions");
 
 	React.useEffect(() => {
 		console.log("Welcome to GDGoC TMU. Now loading...");

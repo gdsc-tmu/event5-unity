@@ -18,7 +18,7 @@ const HeadCard = ({ BodyConfig }) => {
 					{BodyConfig.content}
 				</Typography>
 			</Box>
-			{BodyConfig.source_code && (
+			{BodyConfig.code && (
 				<Box>
 					<Typography variant='h6' sx={{ fontWeight: 600, mb: 1 }}>
 						コード
@@ -31,7 +31,7 @@ const HeadCard = ({ BodyConfig }) => {
 							p: 1,
 						}}
 					>
-						{BodyConfig.source_code}
+						{BodyConfig.code}
 					</Paper>
 				</Box>
 			)}

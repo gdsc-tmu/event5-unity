@@ -14,14 +14,14 @@ import { DocumentCard } from "./Components/DocumentCard";
 import { circles, colorClasses } from "./Configs/CircleConfigs";
 import { HeadCard } from "./Components/HeadCard";
 import { useFetch } from "./Hooks/useFetch";
+import { useGAS } from "./Configs/GASConfigs";
 
 export function jumpTo(path) {
 	window.location.href = `${path}`;
 }
 
 function TopPage() {
-	const url =
-		"https://script.google.com/macros/s/AKfycbxVj1v7c3WguiAIqXadXQ0qKGmNJ_dPRMqTjsYim-GVrr5IRapF-9WQjfVoY8kX0jBdkQ/exec";
+	const url = useGAS("getalldoc");
 	const [documents, setDocuments] = React.useState([1, 2, 3]);
 	const [loaded, setLoaded] = React.useState(false);
 	const [chips, setChips] = React.useState([]);
