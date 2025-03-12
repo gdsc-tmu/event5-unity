@@ -1,7 +1,7 @@
 import { Box, Button, Paper, Stack, Typography } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { jumpTo } from "../../../../TopPage";
+import { jumpTo } from "../../../TopPage";
 
 export const HeadCard = React.memo(() => {
 	const nav = useNavigate();

@@ -8,7 +8,7 @@ import {
 import React from "react";
 import { useLocation } from "react-router-dom";
 import HeadCard from "./Components/HeadCard";
-import { useFetch } from "../../../../Hooks/useFetch";
+import { useFetch } from "../../../Hooks/useFetch";
 
 const page = () => {
 	const location = useLocation();
