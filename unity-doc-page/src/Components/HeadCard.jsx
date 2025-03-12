@@ -48,7 +48,7 @@ export const HeadCard = React.memo(() => {
 					</Box>
 				</Box>
 				<img
-					src='chromekun.png'
+					src='https://gdsc-tmu.github.io/event5-unity/chromekun.png'
 					className='sm:w-[35%] w-full object-cover rounded-lg max-h-[300px]'
 				></img>
 			</Stack>
