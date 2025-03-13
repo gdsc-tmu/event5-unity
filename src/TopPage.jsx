@@ -25,6 +25,7 @@ function TopPage() {
 	const [documents, setDocuments] = React.useState([1, 2, 3]);
 	const [loaded, setLoaded] = React.useState(false);
 	const [chips, setChips] = React.useState([]);
+	const [selectedCategory, setSelectedCategory] = React.useState("all"); // "all", "env", "addfunc", "fundcs", "other"
 
 	React.useEffect(() => {
 		console.log("Welcome to GDGoC TMU. Now loading...");
@@ -50,7 +51,17 @@ function TopPage() {
 			: data;
 	};
 
-	const displayDocuments = filterChips(documents, chips);
+	const filterCategory = (data, category) => {
+		return category != "all"
+			? data.filter((item) => {
+					item.category = item.category ?? "other";
+					return item.category === category;
+			  })
+			: data;
+	};
+
+	const categoriedDocuments = filterCategory(documents, selectedCategory);
+	const displayDocuments = filterChips(categoriedDocuments, chips);
 
 	return (
 		<div className='w-full overflow-hidden relative'>
@@ -75,8 +86,12 @@ function TopPage() {
 					</Box>
 
 					<HeadCard />
-					<ChipInput chips={chips} setChips={setChips} />
-
+					<SearchBar chips={chips} setChips={setChips} sx={{ mb: 3 }} />
+					<CategoriesSelector
+						selectedCategory={selectedCategory}
+						setSelectedCategory={setSelectedCategory}
+						sx={{ gap: 1 }}
+					/>
 					<Stack gap={1} pt={3}>
 						{!loaded && (
 							<Stack sx={{ alignItems: "center", mb: 3 }}>
@@ -112,7 +127,43 @@ function TopPage() {
 	);
 }
 
-const ChipInput = ({ chips, setChips }) => {
+const CategoriesSelector = ({ selectedCategory, setSelectedCategory, sx }) => {
+	const categories = [
+		{
+			label: "すべて",
+			category: "all",
+		},
+		{
+			label: "環境構築",
+			category: "env",
+		},
+		{
+			label: "機能追加",
+			category: "addfunc",
+		},
+		{
+			label: "C#を学ぶ",
+			category: "fundcs",
+		},
+		{
+			label: "その他",
+			category: "other",
+		},
+	];
+	return (
+		<Stack direction='row' sx={{ ...sx }}>
+			{categories.map((category) => (
+				<Chip
+					label={category.label}
+					color={category.category === selectedCategory ? "primary" : "default"}
+					onClick={() => setSelectedCategory(category.category)}
+				/>
+			))}
+		</Stack>
+	);
+};
+
+const SearchBar = ({ chips, setChips, sx }) => {
 	const [inputValue, setInputValue] = React.useState("");
 
 	const handleKeyDown = (event) => {
@@ -128,7 +179,7 @@ const ChipInput = ({ chips, setChips }) => {
 	};
 
 	return (
-		<Paper sx={{ p: 2, mt: 3 }} elevation={3}>
+		<Paper sx={{ p: 2, mt: 3, ...sx }} elevation={3}>
 			<Stack spacing={1} direction='row' flexWrap='wrap'>
 				{chips.map((chip, index) => (
 					<Chip key={index} label={chip} onDelete={() => handleDelete(chip)} />
