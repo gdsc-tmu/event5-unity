@@ -5,20 +5,34 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638773930580000000
-    m_Hash: 646661988
+      ticks: 638774797290000000
+    m_Hash: 222634900
   m_LockFileStatus:
     m_FilePath: /Users/sh/Documents/GitHub/event5-unity/gdgoctmu_unitytutorial/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638773930580000000
-    m_Hash: 2655066230
+      ticks: 638774797290000000
+    m_Hash: 1329543355
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
-  m_LocalFileStatus: []
+  m_LocalFileStatus:
+  - m_FilePath: /Users/sh/Documents/unity/asset/unity-overwriter-master/package.json
+    m_PathExists: 1
+    m_ContentTrackingEnabled: 1
+    m_ModificationDate:
+      serializedVersion: 2
+      ticks: 638110047870000000
+    m_Hash: 4241552916
+  - m_FilePath: /Users/sh/Documents/unity/asset/unity-overwriter-master
+    m_PathExists: 1
+    m_ContentTrackingEnabled: 1
+    m_ModificationDate:
+      serializedVersion: 2
+      ticks: 0
+    m_Hash: 0
 m_ProjectPath: /Users/sh/Documents/GitHub/event5-unity/gdgoctmu_unitytutorial/Packages
 m_EditorVersion: 2022.3.25f1 (530ae0ba3889)
 m_ResolvedPackages:
@@ -809,6 +823,58 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 1.9.2
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+- packageId: jp.amagamina.overwriter@file:/Users/sh/Documents/unity/asset/unity-overwriter-master
+  testable: 0
+  isDirectDependency: 1
+  version: 1.0.0
+  source: 4
+  resolvedPath: /Users/sh/Documents/unity/asset/unity-overwriter-master
+  assetPath: Packages/jp.amagamina.overwriter
+  name: jp.amagamina.overwriter
+  displayName: Overwriter
+  author:
+    name: ina-amagami
+    email: ina@amagamina.jp
+    url: 
+  category: 
+  type: 
+  description: Extension to allow overwriting when importing assets.
+  status: 0
+  errors: []
+  versions:
+    all: []
+    compatible: []
+    recommended: 
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
