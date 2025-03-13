@@ -1,5 +1,5 @@
 export const BASE_URL =
-	"https://script.google.com/macros/s/AKfycbyiCFi5t_QlSGTHO8FiX3rCCpH-ttmvYycN9D_-Y4krCaV8azvGHrB8FLQDWQhCMcF8/exec";
+	"https://script.google.com/macros/s/AKfycbzZUQyEgqKvnG17bu8AnKJAr4GlOEP88LWp4ob74r6SCwYDlHq1k-5wvwnFY6Q6slSgqg/exec";
 
 export function useGAS(route, id) {
 	let url = BASE_URL + "?route=" + route;
