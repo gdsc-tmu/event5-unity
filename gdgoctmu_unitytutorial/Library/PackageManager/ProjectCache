@@ -5,7 +5,11 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< Updated upstream
       ticks: 638772790360000000
+=======
+      ticks: 638773930580000000
+>>>>>>> Stashed changes
     m_Hash: 646661988
   m_LockFileStatus:
     m_FilePath: /Users/sh/Documents/GitHub/event5-unity/gdgoctmu_unitytutorial/Packages/packages-lock.json
@@ -13,7 +17,11 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< Updated upstream
       ticks: 638772790360000000
+=======
+      ticks: 638773930580000000
+>>>>>>> Stashed changes
     m_Hash: 2655066230
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
