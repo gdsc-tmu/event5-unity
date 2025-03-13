@@ -1,7 +1,7 @@
 import { Box, Button, Paper, Stack, Typography } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { jumpTo } from "../../../TopPage";
+import { useExternalPath } from "../../../Hooks/useExternalPath";
 
 export const HeadCard = React.memo(() => {
 	const nav = useNavigate();
@@ -21,7 +21,7 @@ export const HeadCard = React.memo(() => {
 						</Button>
 						<Button
 							onClick={() =>
-								jumpTo(
+								useExternalPath(
 									"https://docs.google.com/forms/d/e/1FAIpQLScCA1zpQgoKF-QUxjVdB7kzAN1MXraBdlJNy_VDWDYjvik1kA/viewform"
 								)
 							}

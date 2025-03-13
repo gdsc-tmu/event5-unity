@@ -1,7 +1,7 @@
 import { Box, Chip, Container, Stack, Typography } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import React from "react";
-import { jumpTo } from "../TopPage";
+import { useExternalPath } from "../Hooks/useExternalPath";
 
 const PageFooter = () => {
 	return (
@@ -21,7 +21,9 @@ const PageFooter = () => {
 							icon={<GitHubIcon />}
 							label='GitHub'
 							variant='outlined'
-							onClick={() => jumpTo("https://github.com/gdsc-tmu/event5-unity")}
+							onClick={() =>
+								useExternalPath("https://github.com/gdsc-tmu/event5-unity")
+							}
 						/>
 					</Box>
 				</Stack>

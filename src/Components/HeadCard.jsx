@@ -1,7 +1,7 @@
 import { Box, Button, Paper, Stack, Typography } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { jumpTo } from "../TopPage";
+import { useExternalPath } from "../Hooks/useExternalPath";
 
 export const HeadCard = React.memo(() => {
 	const nav = useNavigate();
@@ -24,7 +24,7 @@ export const HeadCard = React.memo(() => {
 						>
 							<Button
 								onClick={() =>
-									jumpTo("https://gdsc-tmu.connpass.com/event/347169/")
+									useExternalPath("https://gdsc-tmu.connpass.com/event/347169/")
 								}
 								size='large'
 								variant='outlined'
@@ -34,7 +34,7 @@ export const HeadCard = React.memo(() => {
 							</Button>
 							<Button
 								onClick={() =>
-									jumpTo(
+									useExternalPath(
 										"https://oasis-smartphone-fcf.notion.site/Unity-1b2a6c094a5d80b58031e6eff81bfa77"
 									)
 								}

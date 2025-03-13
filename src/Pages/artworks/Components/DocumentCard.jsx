@@ -8,7 +8,7 @@ import {
 	Typography,
 } from "@mui/material";
 import PushPinIcon from "@mui/icons-material/PushPin";
-import { useExternalPath } from "../Hooks/useExternalPath";
+import { useExternalPath } from "../../../Hooks/useExternalPath";
 
 function dateHelper(d) {
 	const date = new Date(d);

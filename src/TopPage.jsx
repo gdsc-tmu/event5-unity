@@ -1,12 +1,9 @@
 import React from "react";
 import {
 	Box,
-	Chip,
 	CircularProgress,
 	Container,
 	Grid2,
-	InputBase,
-	Paper,
 	Stack,
 	Typography,
 } from "@mui/material";
@@ -16,10 +13,10 @@ import { circles, colorClasses } from "./Configs/CircleConfigs";
 import { HeadCard } from "./Components/HeadCard";
 import { useFetch } from "./Hooks/useFetch";
 import { useGAS } from "./Configs/GASConfigs";
-
-export function jumpTo(path) {
-	window.location.href = `${path}`;
-}
+import { pinnedDocuments } from "./Configs/pinnedDocuments";
+import { SearchBar } from "./Components/SearchBar";
+import { CategoriesSelector } from "./Components/CategoriesSelector";
+import NoResult from "./Components/NoResult";
 
 function TopPage() {
 	const url = useGAS("getalldoc");
@@ -60,19 +57,6 @@ function TopPage() {
 			  })
 			: data;
 	};
-
-	const pinnedDocuments = [
-		{
-			category: "env",
-			link: "https://oasis-smartphone-fcf.notion.site/Unity-1b5a6c094a5d806da5f5d648869301e1",
-			summary: "ここではUnityのインストール方法を説明します！",
-			thumbnail:
-				"https://drive.google.com/file/d/10QvHYUCughbPHZdtcUk1Cqee6v_GOIaC/preview?embedded=true",
-			time_stamp: "2025-03-12T04:10:55.258Z",
-			title: "開発を始める前に！環境構築の方法💻️",
-			pinned: true,
-		},
-	];
 
 	const categoriedDocuments = filterCategory(
 		[...pinnedDocuments, ...documents],
@@ -125,16 +109,7 @@ function TopPage() {
 									);
 								})
 							) : (
-								<Stack
-									sx={{
-										width: "100%",
-										height: 300,
-										alignItems: "center",
-										pt: 10,
-									}}
-								>
-									<Typography variant='h6'>見つかりませんでした</Typography>
-								</Stack>
+								<NoResult />
 							)}
 						</Grid2>
 					</Stack>
@@ -143,76 +118,5 @@ function TopPage() {
 		</div>
 	);
 }
-
-const CategoriesSelector = ({ selectedCategory, setSelectedCategory, sx }) => {
-	const categories = [
-		{
-			label: "すべて",
-			category: "all",
-		},
-		{
-			label: "環境構築",
-			category: "env",
-		},
-		{
-			label: "機能追加",
-			category: "addfunc",
-		},
-		{
-			label: "C#を学ぶ",
-			category: "fundcs",
-		},
-		{
-			label: "その他",
-			category: "other",
-		},
-	];
-	return (
-		<Stack direction='row' sx={{ ...sx }}>
-			{categories.map((category, index) => (
-				<Chip
-					key={index}
-					label={category.label}
-					color={category.category === selectedCategory ? "primary" : "default"}
-					onClick={() => setSelectedCategory(category.category)}
-				/>
-			))}
-		</Stack>
-	);
-};
-
-const SearchBar = ({ chips, setChips, sx }) => {
-	const [inputValue, setInputValue] = React.useState("");
-
-	const handleKeyDown = (event) => {
-		if (event.key === "Enter" && inputValue.trim() !== "") {
-			setChips([...chips, inputValue.trim()]);
-			setInputValue("");
-			event.preventDefault(); // Enterのデフォルト動作を防ぐ
-		}
-	};
-
-	const handleDelete = (chipToDelete) => {
-		setChips(chips.filter((chip) => chip !== chipToDelete));
-	};
-
-	return (
-		<Paper sx={{ p: 2, mt: 3, ...sx }} elevation={3}>
-			<Stack spacing={1} direction='row' flexWrap='wrap'>
-				{chips.map((chip, index) => (
-					<Chip key={index} label={chip} onDelete={() => handleDelete(chip)} />
-				))}
-			</Stack>
-			<InputBase
-				sx={{ mt: 1 }}
-				fullWidth
-				placeholder='Tipsを検索'
-				value={inputValue}
-				onChange={(e) => setInputValue(e.target.value)}
-				onKeyDown={handleKeyDown}
-			/>
-		</Paper>
-	);
-};
 
 export default TopPage;

@@ -1,12 +1,13 @@
 import {
 	Box,
+	Button,
 	CircularProgress,
 	Container,
 	Stack,
 	Typography,
 } from "@mui/material";
 import React from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import HeadCard from "./Components/HeadCard";
 import { useFetch } from "../../../Hooks/useFetch";
 import { useGAS } from "../../../Configs/GASConfigs";
@@ -15,6 +16,7 @@ const page = () => {
 	const params = useParams();
 	const location = useLocation();
 	const que = location.state;
+	const nav = useNavigate();
 
 	const [answers, setAnswers] = React.useState(null);
 	const [Aloaded, setALoaded] = React.useState(false);
@@ -55,12 +57,22 @@ const page = () => {
 	return (
 		<Container>
 			<Box sx={{ my: 3 }}>
-				<Typography variant='h6' sx={{ mb: 1, fontWeight: 600 }}>
-					質問
-				</Typography>
-				<Typography variant='body2' color='textSecondary'>
-					Powered by GDGoC TMU
-				</Typography>
+				<Button
+					variant='outlined'
+					size='small'
+					sx={{ my: 2 }}
+					onClick={() => nav("/questions")}
+				>
+					質問一覧へ
+				</Button>
+				<Box sx={{ ml: 1 }}>
+					<Typography variant='h6' sx={{ mb: 1, fontWeight: 600 }}>
+						質問
+					</Typography>
+					<Typography variant='body2' color='textSecondary'>
+						Powered by GDGoC TMU
+					</Typography>
+				</Box>
 			</Box>
 			<Stack>
 				{Qloaded ? (
