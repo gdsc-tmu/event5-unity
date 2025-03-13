@@ -17,4 +17,6 @@ This project uses third-party libraries with the following licenses:
 
 All dependencies and their respective licenses can be found in the `licenses.txt` file.
 
+Some code examples from [MUI](https://mui.com/material-ui/) are used in this project.
+
 special thanks: https://github.com/rafgraph/spa-github-pages
