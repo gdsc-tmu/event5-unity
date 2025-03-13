@@ -10,6 +10,7 @@ import {
 	Stack,
 	Typography,
 } from "@mui/material";
+
 import { DocumentCard } from "./Components/DocumentCard";
 import { circles, colorClasses } from "./Configs/CircleConfigs";
 import { HeadCard } from "./Components/HeadCard";
@@ -60,7 +61,23 @@ function TopPage() {
 			: data;
 	};
 
-	const categoriedDocuments = filterCategory(documents, selectedCategory);
+	const pinnedDocuments = [
+		{
+			category: "env",
+			link: "https://oasis-smartphone-fcf.notion.site/Unity-1b5a6c094a5d806da5f5d648869301e1",
+			summary: "ここではUnityのインストール方法を説明します！",
+			thumbnail:
+				"https://drive.google.com/file/d/10QvHYUCughbPHZdtcUk1Cqee6v_GOIaC/preview?embedded=true",
+			time_stamp: "2025-03-12T04:10:55.258Z",
+			title: "開発を始める前に！環境構築の方法💻️",
+			pinned: true,
+		},
+	];
+
+	const categoriedDocuments = filterCategory(
+		[...pinnedDocuments, ...documents],
+		selectedCategory
+	);
 	const displayDocuments = filterChips(categoriedDocuments, chips);
 
 	return (
@@ -74,7 +91,7 @@ function TopPage() {
 					></div>
 				);
 			})}
-			<div className='glass w-full'>
+			<div className='glass w-full pb-10'>
 				<Container sx={{ py: 3 }}>
 					<Box sx={{ my: 3 }}>
 						<Typography variant='h5' sx={{ mb: 1, fontWeight: 600 }}>
@@ -152,8 +169,9 @@ const CategoriesSelector = ({ selectedCategory, setSelectedCategory, sx }) => {
 	];
 	return (
 		<Stack direction='row' sx={{ ...sx }}>
-			{categories.map((category) => (
+			{categories.map((category, index) => (
 				<Chip
+					key={index}
 					label={category.label}
 					color={category.category === selectedCategory ? "primary" : "default"}
 					onClick={() => setSelectedCategory(category.category)}

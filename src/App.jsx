@@ -1,7 +1,8 @@
-import { CircularProgress, Stack } from "@mui/material";
+import { CircularProgress, Divider, Stack } from "@mui/material";
 import { lazy, Suspense } from "react";
 import TopPage from "./TopPage";
 import { useRoutes } from "react-router-dom";
+import PageFooter from "./Components/footer";
 
 const pages = import.meta.glob("./Pages/**/page.jsx");
 
@@ -43,5 +44,12 @@ export default function App() {
 }
 
 function EntryPoint() {
-	return <>{useRoutes(routes)}</>;
+	return (
+		<div className='flex flex-col min-h-screen'>
+			<div className='grow overflow-auto'>{useRoutes(routes)}</div>
+			<div className='flex-1'></div>
+			<Divider />
+			<PageFooter />
+		</div>
+	);
 }

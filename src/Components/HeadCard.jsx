@@ -17,35 +17,44 @@ export const HeadCard = React.memo(() => {
 						<br />
 						Unityの機能を活用するための情報をまとめていますので、開発の際にぜひ参考にしてください🙌
 					</Typography>
-					<Box sx={{ mt: 3 }}>
-						<Button
-							onClick={() =>
-								jumpTo("https://gdsc-tmu.connpass.com/event/347169/")
-							}
-							variant='outlined'
-							sx={{ mr: 1 }}
+					<Stack sx={{ mt: 3, flexGrow: 0 }}>
+						<Stack
+							direction={{ xs: "column", sm: "row" }}
+							sx={{ gap: 1, width: "100%" }}
 						>
-							イベントページへ
-						</Button>
-						<Button
-							onClick={() =>
-								jumpTo(
-									"https://oasis-smartphone-fcf.notion.site/Unity-1b2a6c094a5d80b58031e6eff81bfa77"
-								)
-							}
-							variant='contained'
-						>
-							チュートリアルはこちら！
-						</Button>
-						<br />
+							<Button
+								onClick={() =>
+									jumpTo("https://gdsc-tmu.connpass.com/event/347169/")
+								}
+								size='large'
+								variant='outlined'
+								sx={{ flex: 1 }}
+							>
+								イベントページへ
+							</Button>
+							<Button
+								onClick={() =>
+									jumpTo(
+										"https://oasis-smartphone-fcf.notion.site/Unity-1b2a6c094a5d80b58031e6eff81bfa77"
+									)
+								}
+								size='large'
+								variant='contained'
+								sx={{ flex: 1 }}
+							>
+								チュートリアルはこちら！
+							</Button>
+						</Stack>
+
 						<Button
 							variant='outlined'
-							sx={{ mt: 1 }}
+							sx={{ mt: 1, width: "100%" }}
 							onClick={() => nav("/questions")}
+							size='large'
 						>
 							質問もできます！（ベータ版）
 						</Button>
-					</Box>
+					</Stack>
 				</Box>
 				<img
 					src='https://gdsc-tmu.github.io/event5-unity/chromekun.png'
