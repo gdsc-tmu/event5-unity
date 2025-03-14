@@ -1,3 +1,3 @@
 export function useExternalPath(path) {
-	window.location.href = `${path}`;
+	window.open(path, "_blank");
 }
