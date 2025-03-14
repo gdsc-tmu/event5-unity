@@ -46,10 +46,7 @@ export const DocumentCard = ({ doc, isLoaded, link }) => {
 	};
 
 	return (
-		<Card
-			sx={{ width: "100%", "&:hover": { boxShadow: 7 }, cursor: "pointer" }}
-			elevation={3}
-		>
+		<Card sx={{ width: "100%", "&:hover": { boxShadow: 7 } }} elevation={3}>
 			{isLoaded ? (
 				<iframe
 					src={doc.thumbnail}
