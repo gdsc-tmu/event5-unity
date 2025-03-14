@@ -8,7 +8,9 @@ import {
 	Stack,
 	Typography,
 } from "@mui/material";
-import { DocumentCard } from "./Components/DocumentCard";
+import { ArtworkCard } from "./Components/ArtworkCard";
+import { useGAS } from "../../Configs/GASConfigs";
+import { useFetch } from "../../Hooks/useFetch";
 
 const page = () => {
 	const url = useGAS("getalldoc");
@@ -44,7 +46,7 @@ const page = () => {
 				<Container sx={{ py: 3 }}>
 					<Box sx={{ my: 3 }}>
 						<Typography variant='h5' sx={{ mb: 1, fontWeight: 600 }}>
-							「Unity勉強会 – クロームくんを動かそう！ –」サポートページ
+							「Unity勉強会」みんなの作品
 						</Typography>
 						<Typography variant='body2' color='textSecondary'>
 							Powered by GDGoC TMU
@@ -58,26 +60,13 @@ const page = () => {
 							</Stack>
 						)}
 						<Grid2 container spacing={2}>
-							{documents.length > 0 ? (
-								documents.map((doc, index) => {
-									return (
-										<Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={index}>
-											<DocumentCard doc={doc} isLoaded={loaded} />
-										</Grid2>
-									);
-								})
-							) : (
-								<Stack
-									sx={{
-										width: "100%",
-										height: 300,
-										alignItems: "center",
-										pt: 10,
-									}}
-								>
-									<Typography variant='h6'>見つかりませんでした</Typography>
-								</Stack>
-							)}
+							{documents.map((doc, index) => {
+								return (
+									<Grid2 size={{ xs: 12 }} key={index}>
+										<ArtworkCard />
+									</Grid2>
+								);
+							})}
 						</Grid2>
 					</Stack>
 				</Container>

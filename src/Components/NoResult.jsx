@@ -1,7 +1,7 @@
 import { Stack, Typography } from "@mui/material";
 import React from "react";
 
-const NoResult = () => {
+const NoResult = ({ children }) => {
 	return (
 		<Stack
 			sx={{
@@ -11,7 +11,7 @@ const NoResult = () => {
 				pt: 10,
 			}}
 		>
-			<Typography variant='h6'>見つかりませんでした</Typography>
+			<Typography variant='h6'>{children}</Typography>
 		</Stack>
 	);
 };

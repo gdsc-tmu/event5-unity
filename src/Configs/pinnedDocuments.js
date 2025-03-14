@@ -1,12 +1,13 @@
 export const pinnedDocuments = [
 	{
-		category: "env",
-		link: "https://oasis-smartphone-fcf.notion.site/Unity-1b5a6c094a5d806da5f5d648869301e1",
-		summary: "ここではUnityのインストール方法を説明します！",
+		category: "other",
+		link: "https://oasis-smartphone-fcf.notion.site/1b6a6c094a5d80369bfafa18c1777db1",
+		summary:
+			"このページは、3/14のワークショップで、３/29の発表に向けてや春休みにゲームを作ってみようかなと興味を持ってくれた方へのページです。",
 		thumbnail:
-			"https://drive.google.com/file/d/10QvHYUCughbPHZdtcUk1Cqee6v_GOIaC/preview?embedded=true",
-		time_stamp: "2025-03-12T04:10:55.258Z",
-		title: "開発を始める前に！環境構築の方法💻️",
+			"https://drive.google.com/file/d/15KmEPtofPUHvhSv8beM72it2FE92xg7n/preview?embedded=true",
+		time_stamp: "2025-03-14T03:00:55.258Z",
+		title: "🐥これからクロームくんでゲーム制作をしてみようという方へ",
 		pinned: true,
 	},
 ];

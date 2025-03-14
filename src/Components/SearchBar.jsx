@@ -16,6 +16,7 @@ export const SearchBar = ({ chips, setChips, sx }) => {
 		setChips(chips.filter((chip) => chip !== chipToDelete));
 	};
 
+	// from MUI
 	return (
 		<Paper sx={{ p: 2, mt: 3, ...sx }} elevation={3}>
 			<Stack spacing={1} direction='row' flexWrap='wrap'>

@@ -11,6 +11,7 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import HeadCard from "./Components/HeadCard";
 import { useFetch } from "../../../Hooks/useFetch";
 import { useGAS } from "../../../Configs/GASConfigs";
+import NoResult from "../../../Components/NoResult";
 
 const page = () => {
 	const params = useParams();
@@ -96,11 +97,7 @@ const page = () => {
 							return <HeadCard BodyConfig={bodyConfig} key={index} />;
 						})
 					) : (
-						<Box
-							sx={{ display: "flex", width: "100%", justifyContent: "center" }}
-						>
-							<Typography>まだ回答はありません</Typography>
-						</Box>
+						<NoResult>まだ回答はありません</NoResult>
 					)
 				) : (
 					<Box
