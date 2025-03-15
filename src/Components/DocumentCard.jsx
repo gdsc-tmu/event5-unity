@@ -46,12 +46,15 @@ export const DocumentCard = ({ doc, isLoaded, link }) => {
 	};
 
 	return (
-		<Card sx={{ width: "100%", "&:hover": { boxShadow: 7 } }} elevation={3}>
+		<Card
+			sx={{ width: "100%", "&:hover": { boxShadow: 7 }, cursor: "pointer" }}
+			elevation={3}
+		>
 			{isLoaded ? (
 				<iframe
 					src={doc.thumbnail}
 					className='w-full h-[250px]'
-					style={{ pointerEvents: "none" }}
+					style={{ pointerEvents: "none", cursor: "default" }}
 				></iframe>
 			) : (
 				<Skeleton variant='rectangular' sx={{ height: 200 }} />
