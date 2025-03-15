@@ -15,11 +15,66 @@
 11. また，トップページ`https://gdsc-tmu.github.io/event5-unity/`，`http://localhost:5173/event5-unity/`のデータは特別に`src/TopPage.jsx`に記載されています．
 12. ピン留めする記事，GAS の設定は`src/Configs`の中にあります．
 
+## 新しいページを作りたいとき
+
+`src/Pages/`ディレクトリ配下に，作りたいエンドポイント名のディレクトリを作成し，そのなかに`page.jsx`を作成すると，自動でページとして認識されます．
+例えば，`https://gdsc-tmu.github.io/event5-unity/chromekun_page`を作成したい場合，`src/Pages/chromekun_page/page.jsx`を作成するとページとして認識されます．これだけだとエラーを吐いてしまうので，page.jsx に以下の雛形を書いて保存してください．
+
+```
+import React from 'react'
+
+const page = () => {
+  return (
+    <div>page</div>
+  )
+}
+
+export default page
+```
+
+このコードの`<div>Page</div>`は，ほぼ HTML と同様に書けるので，`<div> <div>こんにちは</div> </div>`のように書き換えると「こんにちは」と表示されます．
+※「ほぼ HTML」というのは，JSX のルールで，以下のようなルールがあるからです．
+
+❎️ NG 例
+
+```
+<div>こんにちは</div>
+<div>クロームくんです</div>
+
+<br>
+
+```
+
+✅️ OK 例
+
+```
+⚠️複数のタグがあるときは，それらを囲って単一のタグの中に入れないといけない
+<div>
+   <div>こんにちは</div>
+   <div>クロームくんです</div>
+
+   ⚠️brなど，終了タグがないタグは，スラッシュを入れないといけない
+   <br/>
+</div>
+
+```
+
+これ以外は通常の HTML と同様に書けます．
+
+## デプロイ（本番環境へのアップロード）のやり方
+
+1. 一通り動くか軽く確認する
+   1. トップページ表示
+   2. 質問ページ表示
+2. `npm run deploy`を実行する
+
 ## 使用している技術（主要）
 
 - React
 - MUI(Material UI)
 - Tailwind CSS
+
+メインは React ＋ MUI で，ほんの少し（5%くらい）TailWind CSS を使っています．
 
 ## License
 
