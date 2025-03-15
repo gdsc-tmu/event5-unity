@@ -46,8 +46,9 @@ export default function App() {
 function EntryPoint() {
 	return (
 		<div className='flex flex-col min-h-screen'>
-			<div className='grow overflow-auto'>{useRoutes(routes)}</div>
-			<div className='flex-1'></div>
+			<div className='grow overflow-auto flex flex-col'>
+				{useRoutes(routes)}
+			</div>
 			<Divider />
 			<PageFooter />
 		</div>

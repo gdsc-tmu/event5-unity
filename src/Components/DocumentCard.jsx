@@ -9,13 +9,7 @@ import {
 } from "@mui/material";
 import PushPinIcon from "@mui/icons-material/PushPin";
 import { useExternalPath } from "../Hooks/useExternalPath";
-
-function dateHelper(d) {
-	const date = new Date(d);
-	return `${date.getMonth() + 1}/${date.getDate()} ${date.getHours()}:${(
-		"0" + date.getMinutes()
-	).slice(-2)}`;
-}
+import { useDate } from "../Hooks/useDate";
 
 function ConvertNotionEmbedUrl(baseurl) {
 	// https://oasis-smartphone-fcf.notion.site/Unity-1b2a6c094a5d80b58031e6eff81bfa77?pvs=4
@@ -69,7 +63,7 @@ export const DocumentCard = ({ doc, isLoaded, link }) => {
 								color='textSecondary'
 								sx={{ verticalAlign: "top" }}
 							>
-								{dateHelper(doc.time_stamp)}
+								{useDate(doc.time_stamp)}
 							</Typography>
 						</Stack>
 						<Typography
