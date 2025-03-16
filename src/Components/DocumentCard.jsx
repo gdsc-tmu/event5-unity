@@ -20,6 +20,7 @@ function ConvertNotionEmbedUrl(baseurl) {
 	}
 
 	return baseurl
+		.replace("www.notion.so", "oasis-smartphone-fcf.notion.site")
 		.replace(
 			"https://oasis-smartphone-fcf.notion.site/",
 			"https://oasis-smartphone-fcf.notion.site/ebd/"
