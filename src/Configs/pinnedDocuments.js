@@ -5,7 +5,7 @@ export const pinnedDocuments = [
 		summary:
 			"このページは、3/14のワークショップで、３/29の発表に向けてや春休みにゲームを作ってみようかなと興味を持ってくれた方へのページです。",
 		thumbnail:
-			"https://drive.google.com/file/d/15KmEPtofPUHvhSv8beM72it2FE92xg7n/preview?embedded=true",
+			"https://drive.google.com/file/d/1WKFRuf0A1ikSV5La8xNUmLGDW1HXDmpO/preview?embedded=true",
 		time_stamp: "2025-03-14T03:00:55.258Z",
 		title: "🐥これからクロームくんでゲーム制作をしてみようという方へ",
 		pinned: true,

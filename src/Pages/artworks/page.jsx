@@ -12,6 +12,7 @@ import { ArtworkCard } from "./Components/ArtworkCard";
 import { useGAS } from "../../Configs/GASConfigs";
 import { useFetch } from "../../Hooks/useFetch";
 import { useNavigate } from "react-router-dom";
+import NoResult from "../../Components/NoResult";
 
 async function forceReloadArtwork() {
 	//await useFetch(useGAS("getallartworks&forceReload=true"));
@@ -69,7 +70,7 @@ const page = () => {
 							<Stack sx={{ alignItems: "center", mb: 3 }}>
 								<CircularProgress />
 							</Stack>
-						) : (
+						) : documents.length > 0 ? (
 							<Grid2 container spacing={2}>
 								{documents.map((doc, index) => {
 									return (
@@ -79,6 +80,8 @@ const page = () => {
 									);
 								})}
 							</Grid2>
+						) : (
+							<NoResult>まだ作品がありません</NoResult>
 						)}
 					</Stack>
 				</Container>

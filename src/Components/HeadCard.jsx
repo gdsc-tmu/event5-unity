@@ -7,7 +7,10 @@ export const HeadCard = React.memo(() => {
 	const nav = useNavigate();
 	return (
 		<Paper sx={{ p: 4 }} elevation={3}>
-			<Stack direction={{ xs: "column-reverse", sm: "row" }}>
+			<Stack
+				direction={{ xs: "column-reverse", sm: "row" }}
+				sx={{ alignItems: "center" }}
+			>
 				<Box sx={{ flexGrow: 5, p: 4, pr: 5 }}>
 					<Typography variant='h5' sx={{ mb: 2, fontWeight: 600 }}>
 						サポートページにようこそ！
@@ -54,11 +57,19 @@ export const HeadCard = React.memo(() => {
 						>
 							質問もできます！（ベータ版）
 						</Button>
+						<Button
+							variant='outlined'
+							sx={{ mt: 1, width: "100%" }}
+							onClick={() => nav("/artworks")}
+							size='large'
+						>
+							みんなの作品✨️
+						</Button>
 					</Stack>
 				</Box>
 				<img
-					src='https://gdsc-tmu.github.io/event5-unity/chromekun.png'
-					className='sm:w-[35%] w-full object-cover rounded-lg max-h-[300px]'
+					src='chrome_biginner_icon.png'
+					className='sm:w-[35%] w-full object-scale-down h-full'
 				></img>
 			</Stack>
 		</Paper>
