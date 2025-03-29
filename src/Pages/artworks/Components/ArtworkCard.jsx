@@ -85,7 +85,11 @@ export function ArtworkCard({ artwork, nav }) {
 		return "gray";
 	};
 
-	const ShareText = `https://x.com/intent/tweet?text=${artwork.title}%0ACreated by ${artwork.creator}%0A&hashtags=unitychrome%20%23GDGoCTMU&url=https://gdsc-tmu.github.io/event5-unity/artworks/${artwork.id}`;
+	const ShareText =
+		`https://x.com/intent/tweet?text=${artwork.title}%0ACreated by ${artwork.creator}%0A&hashtags=unitychrome%20%23GDGoCTMU` +
+		(artwork.link
+			? `&url=${artwork.link}`
+			: `&url=https://gdsc-tmu.github.io/event5-unity/artworks`);
 
 	return (
 		<Card sx={{ flexGrow: 1, "&:hover": { boxShadow: 7 } }}>
@@ -145,11 +149,16 @@ export function ArtworkCard({ artwork, nav }) {
 				>
 					<ShareIcon />
 				</IconButton>
-				<Tooltip title={artwork.link}>
-					<Button variant='text' onClick={() => useExternalPath(artwork.link)}>
-						遊びに行く
-					</Button>
-				</Tooltip>
+				{artwork.link && (
+					<Tooltip title={artwork.link}>
+						<Button
+							variant='text'
+							onClick={() => useExternalPath(artwork.link)}
+						>
+							遊びに行く
+						</Button>
+					</Tooltip>
+				)}
 				<ExpandMore
 					expand={expanded}
 					onClick={handleExpandClick}

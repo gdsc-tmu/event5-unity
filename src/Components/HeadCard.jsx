@@ -68,7 +68,7 @@ export const HeadCard = React.memo(() => {
 					</Stack>
 				</Box>
 				<img
-					src='chrome_biginner_icon.png'
+					src='chrome_beginner_icon.png'
 					className='sm:w-[35%] w-full object-scale-down h-full'
 				></img>
 			</Stack>
